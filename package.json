@@ -1,0 +1,30 @@
+{
+  "name": "app_configurer",
+  "version": "0.1.0",
+  "description": "Nodejs applications template and environment variables merge tool",
+  "main": "app/configurer.js",
+  "scripts": {
+    "test": "echo 'Should see hostName:1111'; node test/appTest.js; echo 'passed!'; exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smartrecruiters/app_configurer.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "app",
+    "configure",
+    "environment",
+    "env"
+  ],
+  "author": "FH & AG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smartrecruiters/app_configurer/issues"
+  },
+  "homepage": "https://github.com/smartrecruiters/app_configurer",
+  "dependencies": {
+    "JSONPath": "^0.10.0",
+    "flat": "^1.2.1"
+  }
+}
