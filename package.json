@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/smartrecruiters/app_configurer",
   "dependencies": {
-    "JSONPath": "^0.10.0",
-    "flat": "^1.2.1"
+    "JSONPath": "0.10.0",
+    "flat": "1.2.1"
   }
 }
