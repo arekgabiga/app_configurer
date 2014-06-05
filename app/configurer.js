@@ -2,7 +2,15 @@ var jsonPath = require('JSONPath')
 var flat = require('flat')
 
 function configure(template){
-    var envFile = require(process.env.NODEJS_CONFIG_PATH)
+    if(process.env.NODEJS_CONFIG_PATH === undefined){
+        throw new Error("Environment variable NODEJS_CONFIG_PATH must be set and point to the environment configuration file")
+    }
+    var envFile;
+    try{
+        envFile = require(process.env.NODEJS_CONFIG_PATH)
+    }catch(e){
+        throw new Error("Environment file '"+ process.env.NODEJS_CONFIG_PATH + "' does not exist. Exception: " + e)
+    }
     var templateFlat = flat.flatten(template)
     var environmentFlat = flat.flatten(envFile)
     for(obj in templateFlat){
