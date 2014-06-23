@@ -1,6 +1,6 @@
 {
   "name": "app_configurer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Nodejs applications template and environment variables merge tool",
   "main": "app/configurer.js",
   "scripts": {
