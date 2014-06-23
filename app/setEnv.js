@@ -1,6 +1,8 @@
 /**
  * Created by filip on 02/06/14.
  */
+var path = require('path');
+
 if(process.argv[2] === undefined){
     throw new Error("Source file missing. Format: 'node setEnv.js sourceFile destinationFile'")
 }
@@ -16,5 +18,8 @@ fs.readFile(process.argv[2], 'utf8', function (err,data) {
         return console.log(err);
     }
     var result = configurer.configure(JSON.parse(data));
-    fs.writeFile(process.argv[3], "[" + JSON.stringify(result[0], null, '\t') + "]");
+	var appPath = path.normalize(process.cwd() + '/' + result.script);
+	console.log(appPath, process.cwd());
+	result.script = appPath;
+    fs.writeFile(process.argv[3], JSON.stringify(result, null, '\t'));
 });
